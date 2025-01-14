@@ -1,0 +1,109 @@
+---
+title: "molBV Package Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{molBV_Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+options(width=999)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=10, fig.height=10, fig.align = "center",
+  warning = FALSE
+)
+```
+
+```{css, echo=FALSE}
+    body .main-container {
+      max-width: 1280px !important;
+      width: 1280px !important;
+    }
+    body {
+      max-width: 1280px !important;
+    }
+```
+
+# Overview
+
+The molBV package (v1.0) demonstrates that 16S rRNA amplicon sequencing and a novel pipeline can be used to generate a molecular Nugent BV score (molBV) corresponding to the Nugent score 0 - 10. This algorithm is independent of the region of 16S rRNA amplified, the sequencing platform and source population.
+
+The following packages are required for functions and examples in the molBV package: phyloseq, ggplot2, ggpubr.
+
+```{r setup}
+library(molBV)
+library(phyloseq)
+library(ggplot2)
+library(ggpubr)
+```
+
+# Implementation of molBV on sample data
+
+## Generate molBV scores from 'exampleMicrobiomeData'
+
+**exampleMicrobiomeData** is an example data including 183 genus (rows) and 80 samples (columns):
+
+```{r}
+data(exampleMicrobiomeData)
+dim(exampleMicrobiomeData)
+head(exampleMicrobiomeData)
+range(exampleMicrobiomeData)
+
+map_with_molBVScores <- molBV(exampleMicrobiomeData, outputTable = NULL)
+str(map_with_molBVScores)
+range(map_with_molBVScores$molBV)
+```
+
+## Generate molBV scores from 'converted_otu.biom'
+
+**converted_otu.biom** is an example biom file:
+
+```{r}
+exampleBiomFile <- system.file("extdata", "converted_otu.biom", package = "molBV")
+map_with_molBVScores <- molBV(exampleBiomFile, outputTable = "map_with_molBV.txt")
+```
+
+A txt file **map_with_molBV.txt** will be generated in current working directory.
+
+## Visualization of distribution of molBV across clinical BV diagnoses
+
+Import clinical map:
+
+```{r}
+exampleMetaData <- system.file("extdata", "Mt_Sinai_sample_map.txt", package = "molBV")
+clinical_map <- read.table(exampleMetaData, header = TRUE, sep = "\t", as.is = TRUE)
+str(clinical_map)
+```
+
+Merge the two dfs:
+
+```{r}
+full_set <- merge(x = map_with_molBVScores, y = clinical_map, by.x = "SID", by.y = "Cerv_SampleID")
+```
+
+Make a nice plotter function to see the distribution of molBV across amsel and nugent diagnoses:
+
+```{r}
+basic_boxes <- function(df_in=full_set, x_variable="Amsel_Diagnosis"){
+	p <- ggplot(df_in, aes_string(x = x_variable, y = "molBV", fill = x_variable)) +
+		geom_boxplot()+
+		theme_minimal() + stat_compare_means() +
+		ggtitle(label = paste("molBV across", x_variable))
+	print(p)
+}
+```
+
+Plot for Amsel:
+
+```{r}
+basic_boxes()
+```
+
+Plot for Nugent diagnoses:
+
+```{r}
+basic_boxes(x_variable = "Nugent_diagnosis")
+```

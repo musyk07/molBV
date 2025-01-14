@@ -1,0 +1,19 @@
+Package: molBV
+Type: Package
+Title: The Immune Landscape of Molecular Bacterial Vaginosis and HPV Natural History
+Version: 1.0
+Author: Mykhaylo Usyk, Nicolas Schlecht, Sarah Pickering, LaShanda Williams, Christopher Sollecito, Ana Gradissimo, Mahboobeh Safian, Ligia A Pinto, Rolando Herrero, Carolina Porras, Mark Shiffman, Shankar Viswanathan, Anne Nucci-Sack, Angela Diaz, Robert Burk
+Maintainer: Wodan Ling <wling@fredhutch.org>, Xing Hua <xhua2@fredhutch.org>
+Description: We demonstrate that 16S rRNA amplicon sequencing and a novel pipeline can be used to generate a molecular Nugent BV score (molBV) corresponding to the Nugent score 0 - 10. This algorithm is independent of the region of 16S rRNA amplified, the sequencing platform and source population.
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Imports: phyloseq, ggplot2, ggpubr
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 3.5.0)
