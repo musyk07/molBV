@@ -1,5 +1,22 @@
-# molBV
-This is a brief instruction for the "rlm_molBV.R" script. The purpose of the script is to perform the calculations described in the manuscript tittled "The Immune Landscape of Molecular Bacterial Vaginosis and HPV Natural History".
+# molBV Package
+
+## Installation
+Download the source file `molBV_1.0.tar.gz` and run the following R commands:
+```R
+install.packages("molBV_1.0.tar.gz", repos = NULL, type = "source")
+browseVignettes("molBV")
+??molBV
+```
+This will install the package and allow you to browse a sample tutorial. 
+
+Below are additional instructions for running the molBV algorithm manually (i.e. more clunky, but you get to see all of the individual commands). 
+
+Please cite original paper if using molBV:
+Usyk, M., Schlecht, N. F., Pickering, S., Williams, L., Sollecito, C. C., & Gradissimo, A. molBV reveals immune landscape of bacterial vaginosis and predicts human papillomavirus infection natural history. Nat Commun. 2022; 13: 233.
+https://www.nature.com/articles/s41467-021-27628-3 
+
+# molBV (manual instructions)
+This is a brief instruction for the "rlm_molBV.R" script. The purpose of the script is to perform the calculations described in the manuscript tittled "molBV reveals immune landscape of bacterial vaginosis and predicts human papillomavirus infection natural history".
 
 To run the script you should have R version 4.2.0 installed. Additionally if you will be importing data using the biom format, you will need to install the phyloseq package. The script also uses the ggplot2 and ggpubr packages to visualize the association of molBV with clinical variables and you will need to install these packages if you would like to generate the boxplots. Typical installation time for the packages should take under 10 minutes on MacBook Pro laptop with an i7 processor and 16 Gb of RAM.  
 
