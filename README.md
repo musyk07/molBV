@@ -11,7 +11,10 @@ browseVignettes("molBV")
 ```
 This will install the package and allow you to browse a sample tutorial using the above command. 
 At the bottom of this page there is additional instructions for running the molBV algorithm manually (i.e. see "molBV (manual instructions)", which is more clunky, but you get to see all of the individual commands). 
+
+
 Please cite original paper if using molBV:
+
 Usyk, M., Schlecht, N. F., Pickering, S., Williams, L., Sollecito, C. C., & Gradissimo, A. molBV reveals immune landscape of bacterial vaginosis and predicts human papillomavirus infection natural history. Nat Commun. 2022; 13: 233.
 https://www.nature.com/articles/s41467-021-27628-3 
 
