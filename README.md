@@ -1,5 +1,5 @@
 # molBV
-This is a brief instruction showing several options for installing and running the molBV algorithm (which calculated Nugent-like scores ranging from 1-10 using 16S rRNA data sequenced from cervicovaginal samples). See original publication for full details, validation and connection between molBV and cervicovaignal cytokines: https://www.nature.com/articles/s41467-021-27628-3
+This is a brief instruction showing several options for installing and running the molBV algorithm (which calculated Nugent-like scores ranging from 1-10 using 16S rRNA data sequenced from cervicovaginal samples). See original publication for full details, validation and connection between molBV, cervicovaignal cytokines and cervix pre-cancer: https://www.nature.com/articles/s41467-021-27628-3
 
 # molBV Package
 ## Installation
