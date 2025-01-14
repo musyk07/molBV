@@ -14,7 +14,7 @@ Please cite original paper if using molBV:
 Usyk, M., Schlecht, N. F., Pickering, S., Williams, L., Sollecito, C. C., & Gradissimo, A. molBV reveals immune landscape of bacterial vaginosis and predicts human papillomavirus infection natural history. Nat Commun. 2022; 13: 233.
 https://www.nature.com/articles/s41467-021-27628-3 
 
-# Example Usage (created by Ling, Wodan wling@fredhutch.org)
+# Example Usage (created by Usyk, Mykhaylo: mykhaylo.usyk@einsteinmed.edu and Ling, Wodan: wling@fredhutch.org)
 ## Load the Package and Required Libraries
 
 ```R
