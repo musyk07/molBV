@@ -1,5 +1,6 @@
 # molBV
-This is a brief instruction for the "rlm_molBV.R" script. The purpose of the script is to perform the calculations described in the manuscript tittled "The Immune Landscape of Molecular Bacterial Vaginosis and HPV Natural History".
+This is a brief instruction showing several options for installing and running the molBV algorithm (which calculated Nugent-like scores ranging from 1-10 using 16S rRNA data sequenced from cervicovaginal samples). See original publication for full details, validation and connection between molBV and cervicovaignal cytokines: https://www.nature.com/articles/s41467-021-27628-3
+
 # molBV Package
 ## Installation
 Download the source file `molBV_1.0.tar.gz` and run the following R commands:
